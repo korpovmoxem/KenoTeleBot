@@ -15,5 +15,7 @@ pics = [f for f in listdir('wednesday_pics') if isfile(join('wednesday_pics', f)
 rand_int = random.randrange(len(pics))
 pic_path = '/root/KenoTeleBot/wednesday_pics/' + pics[rand_int]
 
-bot.send_photo('-1001914064521', pic_path)
+with open(pic_path, 'rb') as pic:
+    pic_file = pic.read()
+bot.s('-1001914064521', pic_file)
 
