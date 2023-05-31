@@ -1,4 +1,6 @@
-from random import random
+from os import listdir
+from os.path import isfile, join
+import random
 
 import telebot
 
@@ -8,20 +10,10 @@ with open('bot_auth.txt', 'r') as file:
 bot = telebot.TeleBot(bot_token)
 
 
+pics = [f for f in listdir('wednesday_pics') if isfile(join('wednesday_pics', f))]
+#-1001532546328
+rand_int = random.randrange(len(pics))
+pic_path = '/root/KenoTeleBot/wednesday_pics/' + pics[rand_int]
 
-@bot.message_handler()
-def get_message(message):
-    print(message.chat.id)
+bot.send_photo('-1001914064521', pic_path)
 
-
-@bot.channel_post_handler()
-def a(message):
-    print(message.chat.id)
-
-
-
-bot.infinity_polling()
-
-'''
-bot.send_message('-1001914064521', 'test')
-'''
