@@ -11,7 +11,7 @@ bot = telebot.TeleBot(bot_token)
 
 @bot.message_handler()
 def get_message(message):
-    print(message)
+    print(message.chat.id)
 
 
 bot.infinity_polling()
