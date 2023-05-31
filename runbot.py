@@ -8,7 +8,7 @@ with open('bot_auth.txt', 'r') as file:
 bot = telebot.TeleBot(bot_token)
 
 
-
+'''
 @bot.message_handler()
 def get_message(message):
     print(message.chat.id)
@@ -18,4 +18,8 @@ def get_message(message):
 def a(message):
     print(message.chat.id)
 
+
+
 bot.infinity_polling()
+'''
+bot.send_message('-1001914064521', 'test')
