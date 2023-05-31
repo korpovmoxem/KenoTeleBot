@@ -14,4 +14,8 @@ def get_message(message):
     print(message.chat.id)
 
 
+@bot.channel_post_handler()
+def a(message):
+    print(message.chat.id)
+
 bot.infinity_polling()
