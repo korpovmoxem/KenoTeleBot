@@ -17,5 +17,5 @@ pic_path = '/root/KenoTeleBot/wednesday_pics/' + pics[rand_int]
 
 with open(pic_path, 'rb') as pic:
     pic_file = pic.read()
-bot.s('-1001914064521', pic_file)
+bot.send_photo('-1001914064521', pic_file)
 
